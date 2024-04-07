@@ -2,25 +2,27 @@
 DePIN for EV Charging
 
 DeCharge Program Library README
+
 Table of Contents 
-Introduction
-Installation
-Usage
-API Integrations
-Create_user
-Create_charger
-charger_session
-Concept and Vision
-Technical Architecture
-Business Model
-Product and How It Works
-Problem Statement
-Solutions and Benefits
-Security Considerations
-Testing and Development
-Contributing
-License
-About Us
+
+1. Introduction
+2. Installation
+3. Usage
+4. API Integrations
+   a. Create_user
+   b. Create_charger
+   c. charger_session
+5. Concept and Vision
+6. Technical Architecture
+7. Business Model
+8. Product and How It Works
+9. Problem Statement
+10. Solutions and Benefits
+11. Security Considerations
+12. Testing and Development
+13. Contributing
+14. License
+15. About Us
 
 
 This walkthrough will cover the essence of deCharge from technical specifics to its business model and market solutions, aimed at a broad audience including developers, investors, and potential users.
