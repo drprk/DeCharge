@@ -187,9 +187,7 @@ The foundation of deCharge is built upon the Solana blockchain, chosen for its h
 
 ## Product and How It Works
 
-DeCharge revolutionizes the EV charging experience by offering a user-friendly app that connects EV owners with an extensive network of blockchain-powered charging stations. Users can easily locate, book, and pay for charging sessions through the app, with the added benefit of earning rewards in deCharge tokens. This seamless integration of blockchain technology enhances the overall utility and accessibility
-
- of EV charging solutions, addressing the critical needs of the EV community.
+DeCharge revolutionizes the EV charging experience by offering a user-friendly app that connects EV owners with an extensive network of blockchain-powered charging stations. Users can easily locate, book, and pay for charging sessions through the app, with the added benefit of earning rewards in deCharge tokens. This seamless integration of blockchain technology enhances the overall utility and accessibility of EV charging solutions, addressing the critical needs of the EV community.
 
 ## Problem Statement
 
@@ -202,6 +200,11 @@ DeCharge addresses the aforementioned challenges through its decentralized netwo
 - **Improved Accessibility:** A GPS-enabled app that simplifies locating and booking charging stations.
 - **Decentralized Ownership:** Incorporates NFTs for charger co-ownership, democratizing investment opportunities.
 - **Transparent Transactions:** Leverages blockchain for clear, secure transactions and rewards distribution, fostering trust and engagement within the ecosystem.
+
+## Information architecture and product flow
+
+![Untitled-2024-01-07-1704](https://github.com/drprk/DeCharge/assets/88657058/e9ff9d6c-bba6-4b93-91d3-c919b3065a91)
+
 
 ## Security Considerations
 
