@@ -78,13 +78,13 @@ DeCharge’s program library is crafted to enable key functionalities within the
 
 ### 'Usage'
 
-- The deCharge program exposes three main entry points:
+The deCharge program exposes three main entry points:
 
-1. create_user: Creates a user with the provided phone number hash.
+create_user: Creates a user with the provided phone number hash.
 
-2. create_charger: Creates a new charger provided operator pubkey.
+create_charger: Creates a new charger provided operator pubkey.
 
-3. charger_session: Initiates a charging session with the specified amount.
+charger_session: Initiates a charging session with the specified amount.
 
 Accounts and PDA
 Program ID:
