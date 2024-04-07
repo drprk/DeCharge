@@ -9,9 +9,11 @@ Table of Contents
 2. Installation
 3. Usage
 4. API Integrations
+
    a. Create_user
    b. Create_charger
    c. charger_session
+
 5. Concept and Vision
 6. Technical Architecture
 7. Business Model
