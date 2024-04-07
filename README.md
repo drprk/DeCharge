@@ -11,20 +11,22 @@ Table of Contents
 4. API Integrations
 
    a. Create_user
+   
    b. Create_charger
+
    c. charger_session
 
-5. Concept and Vision
-6. Technical Architecture
-7. Business Model
-8. Product and How It Works
-9. Problem Statement
-10. Solutions and Benefits
-11. Security Considerations
-12. Testing and Development
-13. Contributing
-14. License
-15. About Us
+6. Concept and Vision
+7. Technical Architecture
+8. Business Model
+9. Product and How It Works
+10. Problem Statement
+11. Solutions and Benefits
+12. Security Considerations
+13. Testing and Development
+14. Contributing
+15. License
+16. About Us
 
 
 This walkthrough will cover the essence of deCharge from technical specifics to its business model and market solutions, aimed at a broad audience including developers, investors, and potential users.
