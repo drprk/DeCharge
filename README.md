@@ -76,34 +76,44 @@ DeCharge’s program library is crafted to enable key functionalities within the
 - **Overview:** Manages the charging session details, including payment and session initiation.
 - **Technical Insight:** This function is a testament to deCharge’s innovative approach to transaction management and revenue distribution, ensuring transparency and efficiency through blockchain technology.
 
-### 'Usage'
+
+## Usage
 
 The deCharge program exposes three main entry points:
 
-create_user: Creates a user with the provided phone number hash.
+1. `create_user`: Creates a user with the provided phone number hash.
 
-create_charger: Creates a new charger provided operator pubkey.
+2. `create_charger`: Creates a new charger provided operator pubkey.
+3. `charger_session`: Initiates a charging session with the specified amount.
 
-charger_session: Initiates a charging session with the specified amount.
+### Accounts and PDA
 
-Accounts and PDA
 Program ID:
-
+```md
 MfQ5MtGrou6TxQuBSGAFiQMuPTUWe7Y7kscbswUw31c
-User PDA:
+```
 
+User PDA:
+```js
 web3.PublicKey.findProgramAddressSync(
     [Buffer.from("user"), userWallet.toBuffer()],
     PROGRAM_ID,
 );
+```
 
+<br/>
 Charger PDA:
+
+```js
 web3.PublicKey.findProgramAddressSync(
     [Buffer.from("charger"), chargerWallet.toBuffer()],
     PROGRAM_ID,
 );
+```
+<br/>
 
-create_user ix
+### create_user ix
+```rs
 struct CreateUserAccounts {
     pub user, // payer for the transaction
     pub user_pda, // seeds = [b"user", user_key.buffer()]
@@ -113,7 +123,10 @@ struct CreateUserAccounts {
 struct CreateUserArgs {
     phone_number_hash: String
 }
-create_charger ix
+```
+
+### create_charger ix
+```rs
 struct CreateChargerAccounts {
     pub payer, // payer for the transaction
     pub charger, // charger pubkey
@@ -127,7 +140,10 @@ struct CreateChargerAccounts {
 struct CreateChargerArgs {
     None
 }
-charger_session ix
+```
+
+### charger_session ix
+```rs
 struct ChargerSessionAccounts {
     pub user, // payer for the transaction
     pub user_ata, // user associated token account
@@ -147,7 +163,7 @@ struct ChargerSessionAccounts {
 struct ChargerSessionArgs {
     amount: u64
 }
-
+```
 ## Concept and Vision
 
 DeCharge envisions a future where the adoption of electric vehicles is unfettered by the limitations of current charging infrastructure. The project is poised to address the challenges of accessibility, reliability, and transaction transparency through a decentralized network of charging stations. This network is not only a technological leap forward but also a step towards sustainable transportation, leveraging blockchain to ensure a seamless, secure, and user-friendly experience for all stakeholders involved.
