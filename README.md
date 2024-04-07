@@ -16,6 +16,8 @@ Table of Contents
 
    c. charger_session
 
+   d. API Integration
+
 6. Concept and Vision
 7. Technical Architecture
 8. Business Model
@@ -73,6 +75,78 @@ DeCharge’s program library is crafted to enable key functionalities within the
 
 - **Overview:** Manages the charging session details, including payment and session initiation.
 - **Technical Insight:** This function is a testament to deCharge’s innovative approach to transaction management and revenue distribution, ensuring transparency and efficiency through blockchain technology.
+
+### 'Usage'
+
+- The deCharge program exposes three main entry points:
+
+1. create_user: Creates a user with the provided phone number hash.
+
+2. create_charger: Creates a new charger provided operator pubkey.
+
+3. charger_session: Initiates a charging session with the specified amount.
+
+Accounts and PDA
+Program ID:
+
+MfQ5MtGrou6TxQuBSGAFiQMuPTUWe7Y7kscbswUw31c
+User PDA:
+
+web3.PublicKey.findProgramAddressSync(
+    [Buffer.from("user"), userWallet.toBuffer()],
+    PROGRAM_ID,
+);
+
+Charger PDA:
+web3.PublicKey.findProgramAddressSync(
+    [Buffer.from("charger"), chargerWallet.toBuffer()],
+    PROGRAM_ID,
+);
+
+create_user ix
+struct CreateUserAccounts {
+    pub user, // payer for the transaction
+    pub user_pda, // seeds = [b"user", user_key.buffer()]
+    pub system_program,
+}
+
+struct CreateUserArgs {
+    phone_number_hash: String
+}
+create_charger ix
+struct CreateChargerAccounts {
+    pub payer, // payer for the transaction
+    pub charger, // charger pubkey
+    pub charger_pda, // seeds = [b"charger", charger.buffer()]
+    pub operator, // operator pubkey
+    pub nft_mint, // nft mint address
+    pub token_program, // token program id
+    pub system_program,
+}
+
+struct CreateChargerArgs {
+    None
+}
+charger_session ix
+struct ChargerSessionAccounts {
+    pub user, // payer for the transaction
+    pub user_ata, // user associated token account
+    pub user_pda, // seeds = [b"user", user.buffer()]
+    pub charger, // charger pubkey
+    pub charger_pda, // seeds = [b"charger", charger.buffer()]
+    pub mint, // mint address
+    pub nft_mint, // nft mint address
+    pub nft_mint_owner, // nft mint owner
+    pub nft_mint_owner_ata, // nft mint owner associated token account
+    pub operator, // operator pubkey
+    pub operator_ata, // operator associated token account
+    pub token_program, // token program id
+    pub system_program,
+}
+
+struct ChargerSessionArgs {
+    amount: u64
+}
 
 ## Concept and Vision
 
